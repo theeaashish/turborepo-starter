@@ -1,3 +1,9 @@
+import { Button } from "@repo/ui/components/ui/button"
+
 export default function Home() {
-  return <div>This is the home page...</div>;
+  return (
+    <div>
+      <Button>Button</Button>
+    </div>
+  )
 }

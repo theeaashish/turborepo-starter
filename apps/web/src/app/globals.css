@@ -1,2 +1,3 @@
-/* Import the shared UI styles (which includes tailwind reset) */
+@import "tailwindcss";
 @import "@repo/ui/globals.css";
+@source "../../../../packages/ui";
