@@ -8,7 +8,7 @@ This starter kit includes a powerful combination of tools and configurations:
 
 ### 🏗️ Apps & Packages
 
-- **`apps/web`**: A [Next.js 15](https://nextjs.org/) application (App Router) with Tailwind CSS v4 and Biome.
+- **`apps/web`**: A [Next.js 16](https://nextjs.org/) application (App Router) with Tailwind CSS v4 and Biome.
 - **`packages/ui`**: A shared React component library using **Shadcn UI** primitives and Tailwind CSS.
 - **`packages/database`**: A type-safe database client using **Prisma 7** and PostgreSQL.
 - **`packages/typescript-config`**: Shared `tsconfig.json` configurations for consistency.
@@ -38,7 +38,7 @@ This starter kit includes a powerful combination of tools and configurations:
 Clone the repository and install dependencies:
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/theeaashish/turborepo-starter.git
 cd turborepo-starter
 pnpm install
 ```
