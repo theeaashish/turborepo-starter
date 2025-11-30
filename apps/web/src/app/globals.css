@@ -1,0 +1,2 @@
+/* Import the shared UI styles (which includes tailwind reset) */
+@import "@repo/ui/globals.css";

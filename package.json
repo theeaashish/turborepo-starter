@@ -5,8 +5,12 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "lint:fix": "turbo run lint -- --fix",
+    "format": "turbo run format && prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "check-types": "turbo run check-types",
+    "test": "turbo run test",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "type-check": "turbo run check-types"
   },
   "devDependencies": {
     "prettier": "^3.6.2",
