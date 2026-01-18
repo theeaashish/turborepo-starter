@@ -130,6 +130,9 @@ importers:
 
   packages/engine:
     devDependencies:
+      '@repo/env':
+        specifier: workspace:^
+        version: link:../env
       '@repo/typescript-config':
         specifier: workspace:^
         version: link:../typescript-config

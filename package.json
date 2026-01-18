@@ -10,10 +10,10 @@
     "db:studio": "turbo -F @repo/database studio",
     "dev": "turbo watch dev --continue",
     "dev:next": "turbo watch dev -F web...",
-    "format": "turbo run format --continue -- --cache --cache-location .cache/.prettiercache",
-    "format:fix": "turbo run format --continue -- --write --cache --cache-location .cache/.prettiercache",
-    "lint": "turbo run lint --continue -- --cache --cache-location .cache/.eslintcache",
-    "lint:fix": "turbo run lint --continue -- --fix --cache --cache-location .cache/.eslintcache",
+    "format": "turbo run format --continue",
+    "format:fix": "turbo run format --continue -- --write",
+    "lint": "turbo run lint --continue",
+    "lint:fix": "turbo run lint --continue -- --fix",
     "lint:ws": "pnpm dlx sherif@latest",
     "postinstall": "pnpm db:generate && pnpm lint:ws",
     "typecheck": "turbo run typecheck",
@@ -35,10 +35,10 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
-      "biome check --write --unsafe"
+      "npx biome check --write --unsafe --config-path=apps/web"
     ],
     "*.{json,md,yaml,yml}": [
-      "prettier --write"
+      "pnpm prettier --write"
     ]
   }
 }
