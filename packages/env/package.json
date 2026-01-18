@@ -1,0 +1,26 @@
+{
+  "name": "@repo/env",
+  "version": "0.0.0",
+  "private": true,
+  "sideEffects": false,
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "format": "prettier --check .",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:^",
+    "@types/node": "^20.14.10",
+    "eslint": "^8.57.0",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@t3-oss/env-nextjs": "^0.13.10",
+    "dotenv": "^16.4.5",
+    "zod": "^4.3.5"
+  }
+}
