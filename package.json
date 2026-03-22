@@ -5,9 +5,9 @@
     "build": "turbo run build",
     "clean": "git clean -xdf node_modules",
     "clean:workspaces": "turbo run clean",
-    "db:generate": "pnpm -F @repo/database generate",
-    "db:push": "turbo -F @repo/database push",
-    "db:studio": "turbo -F @repo/database studio",
+    "db:generate": "turbo -F @repo/database db:generate",
+    "db:push": "turbo -F @repo/database db:push",
+    "db:studio": "turbo -F @repo/database db:studio",
     "dev": "turbo watch dev --continue",
     "dev:next": "turbo watch dev -F web...",
     "format": "turbo run format --continue",
@@ -21,8 +21,6 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.8",
-    "@commitlint/cli": "^20.3.1",
-    "@commitlint/config-conventional": "^20.3.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "prettier": "^3.6.2",
@@ -35,7 +33,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx}": [
-      "npx biome check --write --unsafe --config-path=apps/web"
+      "eslint --fix --config apps/web/eslint.config.mjs"
     ],
     "*.{json,md,yaml,yml}": [
       "pnpm prettier --write"

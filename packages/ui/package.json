@@ -12,9 +12,11 @@
   },
   "scripts": {
     "ui:add": "pnpm dlx shadcn@latest add",
-    "lint": "echo \"No linting configured\"",
-    "check-types": "tsc --noEmit",
-    "format": "echo \"No formatting configured\""
+    "lint": "eslint src --config eslint.config.mjs",
+    "lint:fix": "eslint src --config eslint.config.mjs --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "typecheck": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
@@ -36,9 +38,12 @@
     "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
+    "@repo/eslint-config": "workspace:^",
     "@repo/typescript-config": "workspace:^",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.7",
+    "eslint": "^9.39.1",
+    "prettier": "^3.6.2",
     "typescript": "^5.9.3"
   }
 }

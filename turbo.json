@@ -2,19 +2,21 @@
   "$schema": "https://turborepo.com/schema.json",
   "ui": "tui",
   "globalEnv": ["DATABASE_URL", "NODE_ENV"],
+  "globalPassThroughEnv": ["SKIP_ENV_VALIDATION"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*", "../../.env*"],
       "outputs": [".next/**", "!.next/cache/**", "dist/**", ".turbo/**"]
     },
     "lint": {
       "dependsOn": ["^lint"],
-      "inputs": ["$TURBO_DEFAULT$", ".eslintrc.js", ".eslintignore"],
+      "inputs": ["$TURBO_DEFAULT$", "**/eslint.config.*"],
       "outputs": []
     },
     "typecheck": {
       "dependsOn": ["^typecheck"],
+      "inputs": ["$TURBO_DEFAULT$", "../../.env*"],
       "outputs": []
     },
     "format": {
@@ -26,16 +28,19 @@
       "persistent": true
     },
     "db:generate": {
-      "cache": false
+      "cache": true,
+      "inputs": ["prisma/schema.prisma", "../../.env*"],
+      "outputs": ["src/generated/**"]
     },
     "db:push": {
-      "cache": false
+      "cache": false,
+      "inputs": ["../../.env*"]
     },
     "db:studio": {
-      "cache": false
+      "cache": false,
+      "inputs": ["../../.env*"]
     },
     "test": {
-      "dependsOn": ["^build"],
       "outputs": ["coverage/**"],
       "inputs": ["$TURBO_DEFAULT$", "**/*.test.*", "**/*.spec.*"]
     },
