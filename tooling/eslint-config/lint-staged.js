@@ -46,7 +46,7 @@ for (const [dir, pkgFiles] of Object.entries(groups)) {
       cwd: dir,
       stdio: "inherit",
     });
-  } catch (error) {
+  } catch {
     failed = true;
   }
 }

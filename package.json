@@ -6,6 +6,7 @@
     "clean": "git clean -xdf node_modules",
     "clean:workspaces": "turbo run clean",
     "db:generate": "turbo -F @repo/database db:generate",
+    "db:migrate": "turbo -F @repo/database db:migrate",
     "db:push": "turbo -F @repo/database db:push",
     "db:studio": "turbo -F @repo/database db:studio",
     "dev": "turbo watch dev --continue",
@@ -15,8 +16,10 @@
     "lint": "turbo run lint --continue",
     "lint:fix": "turbo run lint --continue -- --fix",
     "lint:ws": "pnpm dlx sherif@latest",
-    "postinstall": "pnpm db:generate && pnpm lint:ws",
+    "setup": "pnpm install && pnpm db:generate",
+    "test": "turbo run test",
     "typecheck": "turbo run typecheck",
+    "postinstall": "pnpm db:generate && pnpm lint:ws",
     "prepare": "husky"
   },
   "devDependencies": {
@@ -24,12 +27,12 @@
     "@repo/prettier-config": "workspace:*",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
-    "prettier": "^3.6.2",
+    "prettier": "catalog:",
     "turbo": "^2.6.1",
-    "typescript": "^5.9.3"
+    "typescript": "catalog:"
   },
   "prettier": "@repo/prettier-config",
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "pnpm@9.15.0",
   "engines": {
     "node": ">=20.0.0"
   },

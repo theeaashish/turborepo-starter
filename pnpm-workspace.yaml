@@ -2,3 +2,11 @@ packages:
   - "apps/*"
   - "packages/*"
   - "tooling/*"
+
+catalog:
+  typescript: ^5.9.3
+  "@types/node": ^24.10.1
+  eslint: ^9.39.1
+  prettier: ^3.6.2
+  zod: ^4.3.5
+  jsdom: ^26.0.0
