@@ -11,8 +11,9 @@ This starter kit includes a powerful combination of tools and configurations:
 - **`apps/web`**: A [Next.js 16](https://nextjs.org/) application (App Router) with Tailwind CSS v4 and Biome.
 - **`packages/ui`**: A shared React component library using **Shadcn UI** primitives and Tailwind CSS.
 - **`packages/database`**: A type-safe database client using **Prisma 7** and PostgreSQL.
-- **`packages/typescript-config`**: Shared `tsconfig.json` configurations for consistency.
-- **`packages/eslint-config`**: Shared ESLint configurations.
+- **`tooling/typescript`**: Shared `tsconfig.json` configurations.
+- **`tooling/eslint-config`**: Shared ESLint configurations.
+- **`tooling/prettier-config`**: Shared Prettier configurations.
 
 ### 🛠️ Tech Stack
 
@@ -94,9 +95,11 @@ The web app will be available at `http://localhost:3000`.
 │   └── web                 # Next.js application
 ├── packages
 │   ├── database            # Prisma schema and client
-│   ├── eslint-config       # Shared ESLint configs
-│   ├── typescript-config   # Shared TS configs
 │   └── ui                  # Shared UI components
+├── tooling
+│   ├── eslint-config       # Shared ESLint configs
+│   ├── prettier-config     # Shared Prettier configs
+│   └── typescript          # Shared TS configs
 ├── turbo.json              # Turborepo pipeline config
 └── package.json            # Root scripts and dependencies
 ```

@@ -2,22 +2,23 @@
   "name": "@repo/database",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
-  "main": "index.js",
+  "description": "Shared database access package built on Prisma and Neon Serverless",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts"
   },
   "scripts": {
-    "db:generate": "dotenv -e ../../.env -- prisma generate",
-    "db:push": "dotenv -e ../../.env -- prisma db push",
-    "db:studio": "dotenv -e ../../.env -- prisma studio",
-    "db:migrate": "dotenv -e ../../.env -- prisma migrate dev",
-    "build": "dotenv -e ../../.env -- prisma generate",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio",
+    "db:migrate": "prisma migrate dev",
+    "build": "prisma generate",
     "lint": "eslint src --config eslint.config.mjs",
     "lint:fix": "eslint src --config eslint.config.mjs --fix",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
-    "typecheck": "pnpm db:generate && tsc --noEmit"
+    "typecheck": "prisma generate && tsc --noEmit"
   },
   "keywords": [],
   "author": "",
@@ -26,19 +27,17 @@
     "@neondatabase/serverless": "^0.10.4",
     "@prisma/adapter-neon": "^7.0.1",
     "@prisma/client": "^7.0.1",
-    "@repo/env": "workspace:^",
-    "prisma": "^7.0.1",
+    "@repo/env": "workspace:*",
     "ws": "^8.18.0"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:^",
-    "@repo/typescript-config": "workspace:^",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "@types/node": "^24.10.1",
     "@types/ws": "^8.5.13",
-    "dotenv": "^16.4.7",
-    "dotenv-cli": "^11.0.0",
     "eslint": "^9.39.1",
     "prettier": "^3.6.2",
+    "prisma": "^7.0.1",
     "typescript": "^5.9.3"
   }
 }
