@@ -26,9 +26,9 @@
     "@changesets/cli": "^2.29.8",
     "@repo/prettier-config": "workspace:*",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
+    "lint-staged": "^17.0.7",
     "prettier": "catalog:",
-    "turbo": "^2.6.1",
+    "turbo": "^2.9.17",
     "typescript": "catalog:"
   },
   "prettier": "@repo/prettier-config",

@@ -25,7 +25,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@prisma/client": "^7.0.1",
+    "@prisma/client": "^7.8.0",
     "@repo/env": "workspace:*"
   },
   "devDependencies": {
@@ -35,7 +35,7 @@
     "dotenv": "^16.5.0",
     "eslint": "catalog:",
     "prettier": "catalog:",
-    "prisma": "^7.0.1",
+    "prisma": "^7.8.0",
     "typescript": "catalog:"
   }
 }
